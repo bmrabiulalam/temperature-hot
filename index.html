@@ -74,13 +74,17 @@
                 tag.innerText = text;
             }
         }
-        
-        const city = document.getElementById('city-input').value;
-        if(city === ''){
-            window.onload(findWeather('dhaka'));
-        }
-        else{
-            findWeather(city);
+
+        window.onload(findDefaultWeather());
+
+        function findDefaultWeather(){
+            const city = document.getElementById('city-input').value;
+            if(city === ''){
+                findWeather('dhaka');
+            }
+            else{
+                findWeather(city);
+            }
         }
         
     </script>
