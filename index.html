@@ -38,8 +38,6 @@
 
     <script>
 
-        window.onload(findWeather('dhaka'));
-
         document.getElementById('submit-search').addEventListener('click', () => {
             const cityName = document.getElementById('city-input').value;
             findWeather(cityName);
@@ -70,6 +68,14 @@
             else{
                 tag.innerText = text;
             }
+        }
+        
+        const city = document.getElementById('city-input').value;
+        if(city === ''){
+            window.onload(findWeather('dhaka'));
+        }
+        else{
+            findWeather(city);
         }
         
     </script>
