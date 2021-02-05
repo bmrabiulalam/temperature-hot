@@ -38,12 +38,14 @@
 
     <script>
 
+        window.onload(findWeather('dhaka'));
+
         document.getElementById('submit-search').addEventListener('click', () => {
             const cityName = document.getElementById('city-input').value;
             findWeather(cityName);
         });
 
-        function findWeather(city='dhaka'){
+        function findWeather(city){
             fetch('https://api.openweathermap.org/data/2.5/weather?q='+city+'&appid=d7d8a56b2df7799d7669e56a307415ba&units=metric')
             .then(response => response.json())
             .then(data => showWeatherData(data))
