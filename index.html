@@ -40,7 +40,12 @@
 
         document.getElementById('submit-search').addEventListener('click', () => {
             const cityName = document.getElementById('city-input').value;
-            findWeather(cityName);
+            if(cityName == ''){
+                alert("Please put some city name.");
+            }
+            else{
+                findWeather(cityName);
+            }
         });
 
         function findWeather(city){
